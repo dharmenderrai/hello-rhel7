@@ -13,8 +13,8 @@ LABEL summary="Provides the latest release of Red Hat Enterprise Linux 7 in a fu
 LABEL description="The Red Hat Enterprise Linux Base image is designed to be a fully supported foundation for your containerized applications. This base image provides your operations and application teams with the packages, language runtimes and tools necessary to run, maintain, and troubleshoot all of your applications. This image is maintained by Red Hat and updated regularly. It is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. When used as the source for all of your containers, only one copy will ever be downloaded and cached in your production environment. Use this image just like you would a regular Red Hat Enterprise Linux distribution. Tools like yum, gzip, and bash are provided by default. For further information on how this image was built look at the /root/anacanda-ks.cfg file."
 LABEL io.k8s.display-name="Red Hat Enterprise Linux 7"
 LABEL io.openshift.tags="base rhel7"
-
+USER root
 ENV container oci
-ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-CMD  echo "Hello RHEL 7.6 base image"
+FROM httpd:2.4
+RUN mkdir -p /usr/local/apache2/htdocs/
+EXPOSE 8080

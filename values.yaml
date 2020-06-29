@@ -1,15 +1,13 @@
-# Default values for hello-rhel.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 replicaCount: 1
 
 image:
   #repository: registry.redhat.io/rhel7/rhel
-  repository: registry.access.redhat.com/rhel7/rhel
+  #repository: registry.access.redhat.com/rhel7/rhel
+  repository: docker.io/dharmenderrai/hello-rhel7
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 7.6-362
+  tag: 1.0.0
+  #tag: 7.6-362
 
 imagePullSecrets: []
 nameOverride: ""

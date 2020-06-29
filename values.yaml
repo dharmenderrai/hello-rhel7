@@ -9,7 +9,7 @@ image:
   repository: registry.access.redhat.com/rhel7/rhel
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 7.8-356
+  tag: 7.6-362
 
 imagePullSecrets: []
 nameOverride: ""
@@ -17,12 +17,12 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: rhel-root
+  name: ""
 
 podAnnotations: {}
 
